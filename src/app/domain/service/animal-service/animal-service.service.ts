@@ -8,5 +8,17 @@ import { Observable } from 'rxjs';
 })
 export class AnimalService {
 
-  constructor() { }
+  private animalsUrls: string;
+
+  constructor(private http: HttpClient) {
+    this.animalsUrls = 'http://localhost:8080/AWF-app/v1/animals';
+   }
+
+   public findAll(): Observable<Animal[]> {
+    return this.http.get<Animal[]>(this.animalsUrls);
+  }
+
+  public save(animal: Animal) {
+    return this.http.post<Animal>(this.animalsUrls, animal);
+  }
 }

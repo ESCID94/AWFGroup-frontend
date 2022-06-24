@@ -8,5 +8,17 @@ import { Observable } from 'rxjs';
 })
 export class SectorService {
 
-  constructor() { }
+  private sectorsUrls: string;
+
+  constructor(private http: HttpClient) {
+    this.sectorsUrls = 'http://localhost:8080/AWF-app/v1/sectors';
+   }
+
+   public findAll(): Observable<Sector[]> {
+    return this.http.get<Sector[]>(this.sectorsUrls);
+  }
+
+  public save(sector: Sector) {
+    return this.http.post<Sector>(this.sectorsUrls, sector);
+  }
 }

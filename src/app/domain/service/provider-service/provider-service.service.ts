@@ -8,5 +8,17 @@ import { Observable } from 'rxjs';
 })
 export class ProviderService {
 
-  constructor() { }
+  private providersUrls: string;
+
+  constructor(private http: HttpClient) {
+    this.providersUrls = 'http://localhost:8080/AWF-app/v1/providers';
+   }
+
+   public findAll(): Observable<Provider[]> {
+    return this.http.get<Provider[]>(this.providersUrls);
+  }
+
+  public save(provider: Provider) {
+    return this.http.post<Provider>(this.providersUrls, provider);
+  }
 }

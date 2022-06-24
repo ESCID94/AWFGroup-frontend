@@ -8,5 +8,17 @@ import { Observable } from 'rxjs';
 })
 export class ContactService {
 
-  constructor() { }
+  private contactsUrls: string;
+
+  constructor(private http: HttpClient) {
+    this.contactsUrls = 'http://localhost:8080/AWF-app/v1/contacts';
+   }
+
+   public findAll(): Observable<Contact[]> {
+    return this.http.get<Contact[]>(this.contactsUrls);
+  }
+
+  public save(contact: Contact) {
+    return this.http.post<Contact>(this.contactsUrls, contact);
+  }
 }
