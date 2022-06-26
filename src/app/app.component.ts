@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AWFGroup-frontend';
+  title: string;
+
+  constructor() {
+    this.title = 'Animal World Farms Application';
+  }
 }

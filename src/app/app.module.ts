@@ -21,6 +21,8 @@ import { SaleListComponent } from './domain/model/sale/sale-list/sale-list.compo
 import { SaleFormComponent } from './domain/model/sale/sale-form/sale-form.component';
 import { SectorFormComponent } from './domain/model/sector/sector-form/sector-form.component';
 import { SectorListComponent } from './domain/model/sector/sector-list/sector-list.component';
+import {APP_BASE_HREF} from '@angular/common';
+import { AboutComponent } from './domain/about/about/about.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +44,14 @@ import { SectorListComponent } from './domain/model/sector/sector-list/sector-li
     SaleListComponent,
     SaleFormComponent,
     SectorFormComponent,
-    SectorListComponent
+    SectorListComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: '/AWF-app/v1/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
