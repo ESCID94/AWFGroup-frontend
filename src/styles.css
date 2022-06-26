@@ -60,3 +60,16 @@ ul {
     display: flex;
     justify-content: center;
 }
+
+footer a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #4e87b5;
+}
+
+footer p {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+  }

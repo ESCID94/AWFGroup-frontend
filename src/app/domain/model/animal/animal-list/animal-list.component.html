@@ -1,1 +1,39 @@
 <p>animal-list works!</p>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Type</th>
+            <th scope="col">Breed</th>
+            <th scope="col">Sex</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Lot</th>
+            <th scope="col">Sector</th>
+            <th scope="col">Farm</th>
+            <th scope="col">Birth Date</th>
+            <th scope="col">Deceased Date</th>
+            <th scope="col">Sale Date</th>
+            <th scope="col">Sold Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let animal of animals">
+            <td>{{ animal.id_animal }}</td>
+            <td>{{ animal.type }}</td>
+            <td>{{ animal.breed }}</td>
+            <td>{{ animal.sex }}</td>
+            <td>{{ animal.weight }}</td>
+            <td>{{ animal.lot }}</td>
+            <td>{{ animal.id_sector }}</td>
+            <td>{{ animal.id_farm }}</td>
+            <td>{{ animal.birth_date }}</td>
+            <td>{{ animal.deceased_date }}</td>
+            <td>{{ animal.sale_date }}</td>
+            <td>{{ animal.sold_date }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
