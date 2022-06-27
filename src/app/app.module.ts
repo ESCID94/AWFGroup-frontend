@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 import { AnimalListComponent } from './domain/model/animal/animal-list/animal-list.component';
 import { AnimalFormComponent } from './domain/model/animal/animal-form/animal-form.component';
 import { BuyerFormComponent } from './domain/model/buyer/buyer-form/buyer-form.component';
@@ -23,6 +26,9 @@ import { SectorFormComponent } from './domain/model/sector/sector-form/sector-fo
 import { SectorListComponent } from './domain/model/sector/sector-list/sector-list.component';
 import {APP_BASE_HREF} from '@angular/common';
 import { AboutComponent } from './domain/about/about/about.component';
+
+import { AnimalService } from './domain/service/animal-service/animal-service.service';
+
 
 @NgModule({
   declarations: [
@@ -49,9 +55,13 @@ import { AboutComponent } from './domain/about/about/about.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/AWF-app/v1/'}],
+  providers: [{provide: APP_BASE_HREF, useValue: '/AWF-app/v1/'},
+              AnimalService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
