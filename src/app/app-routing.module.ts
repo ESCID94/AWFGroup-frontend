@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './domain/about/about/about.component';
+import { AboutComponent } from './domain/about/about.component';
 import { AnimalListComponent } from './domain/model/animal/animal-list/animal-list.component';
 import { AnimalFormComponent } from './domain/model/animal/animal-form/animal-form.component';
 import { BuyerListComponent } from './domain/model/buyer/buyer-list/buyer-list.component';

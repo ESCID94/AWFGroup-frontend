@@ -25,7 +25,7 @@ import { SaleFormComponent } from './domain/model/sale/sale-form/sale-form.compo
 import { SectorFormComponent } from './domain/model/sector/sector-form/sector-form.component';
 import { SectorListComponent } from './domain/model/sector/sector-list/sector-list.component';
 import {APP_BASE_HREF} from '@angular/common';
-import { AboutComponent } from './domain/about/about/about.component';
+import { AboutComponent } from './domain/about/about.component';
 
 import { AnimalService } from './domain/service/animal-service/animal-service.service';
 
