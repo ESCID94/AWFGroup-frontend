@@ -7,8 +7,4 @@ export class Animal {
     lot: number;
     id_sector: number;
     id_farm: number;
-    birth_date: string;
-    deceased_date: string;
-    sale_date: string;
-    sold_date: string;
 }

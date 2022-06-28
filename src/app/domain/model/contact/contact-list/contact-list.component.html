@@ -1,1 +1,37 @@
-<p>contact-list works!</p>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Telephone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Country</th>
+            <th scope="col">CIF</th>
+            <th scope="col">NIF</th>
+            <th scope="col">Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contact of contacts">
+            <td>{{ contact.id_contact }}</td>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.last_name }}</td>
+            <td>{{ contact.telephone }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.address }}</td>
+            <td>{{ contact.country }}</td>
+            <td>{{ contact.CIF }}</td>
+            <td>{{ contact.NIF }}</td>
+            <td>{{ contact.category }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <li class="list-inline-item">
+      <a routerLink="/addContact" class="btn btn-info">Add Contact</a>
+    </li>
+  </div>

@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+/*
+Lists and Forms
+*/
+
 import { AnimalListComponent } from './domain/model/animal/animal-list/animal-list.component';
 import { AnimalFormComponent } from './domain/model/animal/animal-form/animal-form.component';
 import { BuyerFormComponent } from './domain/model/buyer/buyer-form/buyer-form.component';
@@ -27,8 +31,18 @@ import { SectorListComponent } from './domain/model/sector/sector-list/sector-li
 import {APP_BASE_HREF} from '@angular/common';
 import { AboutComponent } from './domain/about/about.component';
 
+/*
+Services
+*/
 import { AnimalService } from './domain/service/animal-service/animal-service.service';
-
+import { BuyerService } from './domain/service/buyer-service/buyer-service.service';
+import { ContactService } from './domain/service/contact-service/contact-service.service';
+import { EmployeeService } from './domain/service/employee-service/employee-service.service';
+import { FarmService } from './domain/service/farm-service/farm-service.service';
+import { ProductService } from './domain/service/product-service/product-service.service';
+import { ProviderService } from './domain/service/provider-service/provider-service.service';
+import { SaleService } from './domain/service/sale-service/sale-service.service';
+import { SectorService } from './domain/service/sector-service/sector-service.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +74,15 @@ import { AnimalService } from './domain/service/animal-service/animal-service.se
     FormsModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/AWF-app/v1/'},
-              AnimalService
+              AnimalService,
+              BuyerService,
+              ContactService,
+              EmployeeService,
+              FarmService,
+              ProductService,
+              ProviderService,
+              SaleService,
+              SectorService
   ],
   bootstrap: [AppComponent]
 })

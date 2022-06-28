@@ -1,1 +1,62 @@
-<p>contact-form works!</p>
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #contactform="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="contact.name" 
+            class="form-control" 
+            placeholder="Enter the contact name">
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last name</label>
+          <input type="text" [(ngModel)]="contact.last_name" 
+            class="form-control" 
+            placeholder="Enter the contact last name">
+        </div>
+        <div class="form-group">
+          <label for="telephone">Telephone</label>
+          <input type="text" [(ngModel)]="contact.telephone" 
+            class="form-control" 
+            placeholder="Enter the contact telephone">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" [(ngModel)]="contact.email" 
+            class="form-control" 
+            placeholder="Enter the contact email">
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" [(ngModel)]="contact.address" 
+            class="form-control" 
+            placeholder="Enter the contact address">
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" [(ngModel)]="contact.country" 
+            class="form-control" 
+            placeholder="Enter the contact country">
+        </div>
+        <div class="form-group">
+          <label for="CIF">CIF</label>
+          <input type="text" [(ngModel)]="contact.CIF" 
+            class="form-control" 
+            placeholder="Enter the contact CIF">
+        </div>
+        <div class="form-group">
+          <label for="NIF">NIF</label>
+          <input type="text" [(ngModel)]="contact.NIF" 
+            class="form-control" 
+            placeholder="Enter the contact NIF">
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <input type="text" [(ngModel)]="contact.category" 
+            class="form-control" 
+            placeholder="Enter the contact category">
+        </div>
+        <button type="submit" [disabled]="!contactform.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>

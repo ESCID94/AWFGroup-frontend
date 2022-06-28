@@ -1,1 +1,44 @@
-<p>buyer-form works!</p>
+  <div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #buyerform="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="buyer.name" 
+            class="form-control" 
+            placeholder="Enter the buyer name">
+        </div>
+        <div class="form-group">
+          <label for="CIF">CIF</label>
+          <input type="text" [(ngModel)]="buyer.CIF" 
+            class="form-control" 
+            placeholder="Enter the buyer CIF">
+        </div>
+        <div class="form-group">
+          <label for="NIF">NIF</label>
+          <input type="text" [(ngModel)]="buyer.NIF" 
+            class="form-control" 
+            placeholder="Enter the buyer NIF">
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <input type="text" [(ngModel)]="buyer.category" 
+            class="form-control" 
+            placeholder="Enter the buyer category">
+        </div>
+        <div class="form-group">
+          <label for="id_contact">Contact</label>
+          <input type="text" [(ngModel)]="buyer.id_contact" 
+            class="form-control" 
+            placeholder="Enter the buyer contact">
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" [(ngModel)]="buyer.country" 
+            class="form-control" 
+            placeholder="Enter the buyer country">
+        </div>
+        <button type="submit" [disabled]="!buyerform.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>

@@ -1,1 +1,32 @@
-<p>sale-form works!</p>
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #saleform="ngForm">
+        <div class="form-group">
+          <label for="id_animal">Animal</label>
+          <input type="text" [(ngModel)]="sale.id_animal" 
+            class="form-control" 
+            placeholder="Enter the sale animal">
+        </div>
+        <div class="form-group">
+          <label for="id_buyer">Buyer</label>
+          <input type="text" [(ngModel)]="sale.id_buyer" 
+            class="form-control" 
+            placeholder="Enter the sale buyer">
+        </div>
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input type="text" [(ngModel)]="sale.quantity" 
+            class="form-control" 
+            placeholder="Enter the sale quantity in terms of price per kilogram">
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="text" [(ngModel)]="sale.price" 
+            class="form-control" 
+            placeholder="Enter the sale total price">
+        </div>
+        <button type="submit" [disabled]="!saleform.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>

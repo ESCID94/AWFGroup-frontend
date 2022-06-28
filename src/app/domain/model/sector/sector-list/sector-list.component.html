@@ -1,1 +1,29 @@
-<p>sector-list works!</p>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type Animals</th>
+            <th scope="col">Location</th>
+            <th scope="col">Farm</th>
+            <th scope="col">Employee</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sector of sectors">
+            <td>{{ sector.id_sector }}</td>
+            <td>{{ sector.name }}</td>
+            <td>{{ sector.type_animals }}</td>
+            <td>{{ sector.location }}</td>
+            <td>{{ sector.id_farm }}</td>
+            <td>{{ sector.id_employee }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <li class="list-inline-item">
+      <a routerLink="/addSector" class="btn btn-info">Add Sector</a>
+    </li>
+  </div>

@@ -4,6 +4,4 @@ export class Farm {
     location: string;
     farm_size: number;
     total_sectors: string;
-    creation_date: string;
-    deactivated_date: string;
 }

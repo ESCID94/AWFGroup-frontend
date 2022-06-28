@@ -9,6 +9,4 @@ export class Contact {
     CIF: string;
     NIF: string;
     category: string;
-    since_date: string;
-    
 }

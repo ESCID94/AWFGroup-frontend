@@ -4,5 +4,4 @@ export class Sale {
     id_buyer: number;
     quantity: number;
     price: number;
-    sale_date: string;
 }

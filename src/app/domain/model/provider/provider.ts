@@ -6,5 +6,4 @@ export class Provider {
     category: string;
     id_contact: number;
     country: string;
-    since_date: string;
 }

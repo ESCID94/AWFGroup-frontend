@@ -1,1 +1,31 @@
-<p>buyer-list works!</p>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">CIF</th>
+            <th scope="col">NIF</th>
+            <th scope="col">Category</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Country</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let buyer of buyers">
+            <td>{{ buyer.id_buyer }}</td>
+            <td>{{ buyer.name }}</td>
+            <td>{{ buyer.CIF }}</td>
+            <td>{{ buyer.NIF }}</td>
+            <td>{{ buyer.category }}</td>
+            <td>{{ buyer.id_contact }}</td>
+            <td>{{ buyer.country }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <li class="list-inline-item">
+      <a routerLink="/addBuyer" class="btn btn-info">Add Buyer</a>
+    </li>
+  </div>

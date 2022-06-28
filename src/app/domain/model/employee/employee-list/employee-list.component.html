@@ -1,1 +1,27 @@
-<p>employee-list works!</p>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td>{{ employee.id_employee }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.last_name }}</td>
+            <td>{{ employee.salary }}</td>
+            <td>{{ employee.category }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <li class="list-inline-item">
+      <a routerLink="/addEmployee" class="btn btn-info">Add Employee</a>
+    </li>
+  </div>

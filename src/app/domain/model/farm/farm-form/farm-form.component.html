@@ -1,1 +1,32 @@
-<p>farm-form works!</p>
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #farmform="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="farm.name" 
+            class="form-control" 
+            placeholder="Enter the farm name">
+        </div>
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" [(ngModel)]="farm.location" 
+            class="form-control" 
+            placeholder="Enter the farm location">
+        </div>
+        <div class="form-group">
+          <label for="farm_size">Size</label>
+          <input type="text" [(ngModel)]="farm.farm_size" 
+            class="form-control" 
+            placeholder="Enter the farm size">
+        </div>
+        <div class="form-group">
+          <label for="total_sectors">Total sectors</label>
+          <input type="text" [(ngModel)]="farm.total_sectors" 
+            class="form-control" 
+            placeholder="Enter the farm total sectors">
+        </div>
+        <button type="submit" [disabled]="!farmform.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>

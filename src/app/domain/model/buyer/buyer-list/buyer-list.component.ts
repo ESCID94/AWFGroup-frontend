@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Buyer } from '../buyer';
+import { BuyerService } from 'src/app/domain/service/buyer-service/buyer-service.service';
 
 @Component({
   selector: 'app-buyer-list',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuyerListComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+    buyers: Buyer[];
+  
+    constructor(private buyerService: BuyerService) { }
+  
+    ngOnInit() {
+      this.buyerService.findAll().subscribe(data => {
+        this.buyers=data;
+      })
+    }
+  
 
 }

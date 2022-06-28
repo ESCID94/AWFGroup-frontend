@@ -1,1 +1,32 @@
-<p>employee-form works!</p>
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #employeeform="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="employee.name" 
+            class="form-control" 
+            placeholder="Enter the employee name">
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last name</label>
+          <input type="text" [(ngModel)]="employee.last_name" 
+            class="form-control" 
+            placeholder="Enter the employee last name">
+        </div>
+        <div class="form-group">
+          <label for="salary">Salary</label>
+          <input type="text" [(ngModel)]="employee.salary" 
+            class="form-control" 
+            placeholder="Enter the employee salary">
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <input type="text" [(ngModel)]="employee.category" 
+            class="form-control" 
+            placeholder="Enter the employee category">
+        </div>
+        <button type="submit" [disabled]="!employeeform.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>

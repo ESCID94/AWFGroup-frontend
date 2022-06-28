@@ -6,5 +6,4 @@ export class Buyer {
     category: string;
     id_contact: number;
     country: string;
-    since_date: string;
 }
