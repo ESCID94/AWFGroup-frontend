@@ -3,60 +3,78 @@
       <form (ngSubmit)="onSubmit()" #contactform="ngForm">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" [(ngModel)]="contact.name" 
+          <input type="text" [(ngModel)]="contact.name"
+            id="name" 
+            name="name" 
             class="form-control" 
             placeholder="Enter the contact name">
         </div>
         <div class="form-group">
           <label for="last_name">Last name</label>
-          <input type="text" [(ngModel)]="contact.last_name" 
+          <input type="text" [(ngModel)]="contact.last_name"
+            id="last_name" 
+            name="last_name"
             class="form-control" 
             placeholder="Enter the contact last name">
         </div>
         <div class="form-group">
           <label for="telephone">Telephone</label>
-          <input type="text" [(ngModel)]="contact.telephone" 
+          <input type="text" [(ngModel)]="contact.telephone"
+            id="telephone" 
+            name="telephone"           
             class="form-control" 
             placeholder="Enter the contact telephone">
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="text" [(ngModel)]="contact.email" 
+          <input type="text" [(ngModel)]="contact.email"
+            id="email" 
+            name="email"           
             class="form-control" 
             placeholder="Enter the contact email">
         </div>
         <div class="form-group">
           <label for="address">Address</label>
-          <input type="text" [(ngModel)]="contact.address" 
+          <input type="text" [(ngModel)]="contact.address"
+            id="address" 
+            name="address"           
             class="form-control" 
             placeholder="Enter the contact address">
         </div>
         <div class="form-group">
           <label for="country">Country</label>
-          <input type="text" [(ngModel)]="contact.country" 
+          <input type="text" [(ngModel)]="contact.country"
+            id="country" 
+            name="country"           
             class="form-control" 
             placeholder="Enter the contact country">
         </div>
         <div class="form-group">
           <label for="CIF">CIF</label>
-          <input type="text" [(ngModel)]="contact.CIF" 
+          <input type="text" [(ngModel)]="contact.CIF"
+            id="CIF" 
+            name="CIF" 
             class="form-control" 
             placeholder="Enter the contact CIF">
         </div>
         <div class="form-group">
           <label for="NIF">NIF</label>
           <input type="text" [(ngModel)]="contact.NIF" 
+            id="NIF" 
+            name="NIF"          
             class="form-control" 
             placeholder="Enter the contact NIF">
         </div>
         <div class="form-group">
           <label for="category">Category</label>
-          <input type="text" [(ngModel)]="contact.category" 
+          <input type="text" [(ngModel)]="contact.category"
+            id="category" 
+            name="category" 
             class="form-control" 
             placeholder="Enter the contact category">
         </div>
         <button type="submit" [disabled]="!contactform.form.valid" 
-          class="btn btn-info">Submit</button>
+          class="button">Submit</button>
       </form>
     </div>
   </div>

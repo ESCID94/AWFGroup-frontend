@@ -3,24 +3,30 @@
       <form (ngSubmit)="onSubmit()" #productform="ngForm">
         <div class="form-group">
           <label for="category">Category</label>
-          <input type="text" [(ngModel)]="product.category" 
+          <input type="text" [(ngModel)]="product.category" id="category" name="category"
+            id="category" 
+            name="category"  
             class="form-control" 
             placeholder="Enter the product category">
         </div>
         <div class="form-group">
           <label for="type">Type</label>
-          <input type="text" [(ngModel)]="product.type" 
-            class="form-control" 
+          <input type="text" [(ngModel)]="product.type" id="type" name="type"
+            class="form-control"
+            id="category" 
+            name="category"
             placeholder="Enter the product type">
         </div>
         <div class="form-group">
           <label for="id_provider">Provider</label>
-          <input type="text" [(ngModel)]="product.id_provider" 
+          <input type="text" [(ngModel)]="product.id_provider" id="id_provider" name="id_provider"
+            id="id_provider" 
+            name="id_provider"          
             class="form-control" 
             placeholder="Enter the product provider">
         </div>
         <button type="submit" [disabled]="!productform.form.valid" 
-          class="btn btn-info">Submit</button>
+          class="button">Submit</button>
       </form>
     </div>
   </div>

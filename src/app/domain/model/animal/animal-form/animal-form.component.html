@@ -3,48 +3,62 @@
       <form (ngSubmit)="onSubmit()" #animalform="ngForm">
         <div class="form-group">
           <label for="type">Type</label>
-          <input type="text" [(ngModel)]="animal.type" 
+          <input type="text" [(ngModel)]="animal.type"
+            id="type" 
+            name="type"    
             class="form-control" 
             placeholder="Enter the animal type">
         </div>
         <div class="form-group">
           <label for="breed">Breed</label>
-          <input type="text" [(ngModel)]="animal.breed" 
+          <input type="text" [(ngModel)]="animal.breed"
+            id="breed" 
+            name="breed"
             class="form-control" 
             placeholder="Enter the animal breed">
         </div>
         <div class="form-group">
           <label for="sex">Sex</label>
-          <input type="text" [(ngModel)]="animal.sex" 
+          <input type="text" [(ngModel)]="animal.sex"
+            id="sex" 
+            name="sex"           
             class="form-control" 
             placeholder="Enter the animal sex">
         </div>
         <div class="form-group">
           <label for="weight">Weight</label>
           <input type="text" [(ngModel)]="animal.weight" 
+            id="weight" 
+            name="weight"          
             class="form-control" 
             placeholder="Enter the animal weight">
         </div>
         <div class="form-group">
           <label for="lot">Lot</label>
           <input type="text" [(ngModel)]="animal.lot" 
+            id="lot" 
+            name="lot"          
             class="form-control" 
             placeholder="Enter the animal lot">
         </div>
         <div class="form-group">
           <label for="sector">Sector</label>
           <input type="text" [(ngModel)]="animal.id_sector" 
+            id="id_sector" 
+            name="id_sector"
             class="form-control" 
             placeholder="Enter the animal sector">
         </div>
         <div class="form-group">
           <label for="farm">Farm</label>
           <input type="text" [(ngModel)]="animal.id_farm" 
+            id="id_farm" 
+            name="id_farm"  
             class="form-control" 
             placeholder="Enter the animal farm">
         </div>
         <button type="submit" [disabled]="!animalform.form.valid" 
-          class="btn btn-info">Submit</button>
+          class="button">Submit</button>
       </form>
     </div>
   </div>

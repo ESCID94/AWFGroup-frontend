@@ -3,42 +3,42 @@
       <form (ngSubmit)="onSubmit()" #providerform="ngForm">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" [(ngModel)]="provider.name" 
+          <input type="text" [(ngModel)]="provider.name" id="name" name="name" 
             class="form-control" 
             placeholder="Enter the provider name">
         </div>
         <div class="form-group">
           <label for="CIF">CIF</label>
-          <input type="text" [(ngModel)]="provider.CIF" 
+          <input type="text" [(ngModel)]="provider.CIF" id="CIF" name="CIF" 
             class="form-control" 
             placeholder="Enter the provider CIF">
         </div>
         <div class="form-group">
           <label for="NIF">NIF</label>
-          <input type="text" [(ngModel)]="provider.NIF" 
+          <input type="text" [(ngModel)]="provider.NIF" id="NIF" name="NIF"
             class="form-control" 
             placeholder="Enter the provider NIF">
         </div>
         <div class="form-group">
           <label for="category">Category</label>
-          <input type="text" [(ngModel)]="provider.category" 
+          <input type="text" [(ngModel)]="provider.category" id="category" name="category"
             class="form-control" 
             placeholder="Enter the provider category">
         </div>
         <div class="form-group">
             <label for="id_contact">Contact</label>
-            <input type="text" [(ngModel)]="provider.id_contact" 
+            <input type="text" [(ngModel)]="provider.id_contact" id="id_contact" name="id_contact" 
               class="form-control" 
               placeholder="Enter the provider contact">
           </div>
           <div class="form-group">
             <label for="country">Country</label>
-            <input type="text" [(ngModel)]="provider.country" 
+            <input type="text" [(ngModel)]="provider.country" id="country" name="country"
               class="form-control" 
               placeholder="Enter the provider country">
           </div>
         <button type="submit" [disabled]="!providerform.form.valid" 
-          class="btn btn-info">Submit</button>
+          class="button">Submit</button>
       </form>
     </div>
   </div>

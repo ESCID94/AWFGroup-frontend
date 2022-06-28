@@ -3,30 +3,32 @@
       <form (ngSubmit)="onSubmit()" #employeeform="ngForm">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" [(ngModel)]="employee.name" 
+          <input type="text" [(ngModel)]="employee.name"
+            id="name" 
+            name="name"           
             class="form-control" 
             placeholder="Enter the employee name">
         </div>
         <div class="form-group">
           <label for="last_name">Last name</label>
-          <input type="text" [(ngModel)]="employee.last_name" 
+          <input type="text" [(ngModel)]="employee.last_name" id="last_name" name="last_name"
             class="form-control" 
             placeholder="Enter the employee last name">
         </div>
         <div class="form-group">
           <label for="salary">Salary</label>
-          <input type="text" [(ngModel)]="employee.salary" 
+          <input type="text" [(ngModel)]="employee.salary" id="salary" name="salary"
             class="form-control" 
             placeholder="Enter the employee salary">
         </div>
         <div class="form-group">
           <label for="category">Category</label>
-          <input type="text" [(ngModel)]="employee.category" 
+          <input type="text" [(ngModel)]="employee.category" id="category" name="category"
             class="form-control" 
             placeholder="Enter the employee category">
         </div>
         <button type="submit" [disabled]="!employeeform.form.valid" 
-          class="btn btn-info">Submit</button>
+          class="button">Submit</button>
       </form>
     </div>
   </div>
