@@ -14,14 +14,14 @@ export class SaleFormComponent {
 
   constructor(private route: ActivatedRoute, private router: Router,
     private saleService: SaleService) {
-      this.sale = new Sale();
-     }
+    this.sale = new Sale();
+  }
 
-  onSubmit(){
+  onSubmit() {
     this.saleService.save(this.sale).subscribe(result => this.goToSaleList());
   }
 
-  goToSaleList(){
+  goToSaleList() {
     this.router.navigate(['/sales']);
   }
 

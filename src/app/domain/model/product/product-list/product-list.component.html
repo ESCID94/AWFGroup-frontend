@@ -1,25 +1,29 @@
 <div class="card my-5">
-    <div class="card-body">
-      <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Category</th>
-            <th scope="col">Type</th>
-            <th scope="col">Provider</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let product of products">
-            <td>{{ product.id_product }}</td>
-            <td>{{ product.category }}</td>
-            <td>{{ product.type }}</td>
-            <td>{{ product.id_provider }}</td>
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Category</th>
+          <th scope="col">Type</th>
+          <th scope="col">Provider</th>
         </tr>
-        </tbody>
-      </table>
-    </div>
-    <li class="list-inline-item">
-      <a routerLink="/addProduct" class="button">Add Product</a>
-    </li>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.id_product }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.type }}</td>
+          <td>{{ product.id_provider }}</td>
+          <td>
+            <button class="btn btn-outline-primary" (click)="edit(this.product)">Edit</button>
+            <button class="btn btn-outline-danger" (click)="delete(this.product)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+  <li class="list-inline-item">
+    <a routerLink="/addProduct" class="button">Add Product</a>
+  </li>
+</div>

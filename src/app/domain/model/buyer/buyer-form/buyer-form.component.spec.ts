@@ -8,9 +8,9 @@ describe('BuyerFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BuyerFormComponent ]
+      declarations: [BuyerFormComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(BuyerFormComponent);
     component = fixture.componentInstance;

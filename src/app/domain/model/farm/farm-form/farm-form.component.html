@@ -1,32 +1,37 @@
 <div class="card my-5">
-    <div class="card-body">
-      <form (ngSubmit)="onSubmit()" #farmform="ngForm">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" [(ngModel)]="farm.name" id="name" name="name" 
-            class="form-control" 
-            placeholder="Enter the farm name">
-        </div>
-        <div class="form-group">
-          <label for="location">Location</label>
-          <input type="text" [(ngModel)]="farm.location" id="location" name="location" 
-            class="form-control" 
-            placeholder="Enter the farm location">
-        </div>
-        <div class="form-group">
-          <label for="farm_size">Size</label>
-          <input type="text" [(ngModel)]="farm.farm_size" id="farm_size" name="farm_size" 
-            class="form-control" 
-            placeholder="Enter the farm size">
-        </div>
-        <div class="form-group">
-          <label for="total_sectors">Total sectors</label>
-          <input type="text" [(ngModel)]="farm.total_sectors" id="total_sectors" name="total_sectors" 
-            class="form-control" 
-            placeholder="Enter the farm total sectors">
-        </div>
-        <button type="submit" [disabled]="!farmform.form.valid" 
-          class="button">Submit</button>
-      </form>
-    </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #farmform="ngForm">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Location</th>
+            <th scope="col">Size</th>
+            <th scope="col">Total sectors</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="farm.name" id="name" name="name" class="form-control"
+                placeholder="Name">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="farm.location" id="location" name="location" class="form-control"
+                placeholder="Location">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="farm.farm_size" id="farm_size" name="farm_size" class="form-control"
+                placeholder="Size">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="farm.total_sectors" id="total_sectors" name="total_sectors"
+                class="form-control" placeholder="Total sectors">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit" [disabled]="!farmform.form.valid" class="button">Submit</button>
+    </form>
   </div>
+</div>

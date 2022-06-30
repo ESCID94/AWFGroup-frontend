@@ -9,9 +9,11 @@ import { Observable } from 'rxjs';
 export class EmployeeService {
 
   private employeeUrls: string;
+  private employeesUrlDelete: string;
 
   constructor(private http: HttpClient) {
     this.employeeUrls = 'http://localhost:8080/AWF-app/v1/employees';
+    this.employeesUrlDelete = 'http://localhost:8080/AWF-app/v1/employees/deleteEmployeeById';
    }
 
    public findAll(): Observable<Employee[]> {
@@ -19,6 +21,14 @@ export class EmployeeService {
   }
 
   public save(employee: Employee) {
+    return this.http.post<Employee>(this.employeeUrls, employee);
+  }
+
+  public delete(employee: Employee): Observable<Employee> {
+    return this.http.request<Employee>('delete',this.employeesUrlDelete, {body: employee});
+  }
+
+  public edit(employee: Employee) {
     return this.http.post<Employee>(this.employeeUrls, employee);
   }
 }

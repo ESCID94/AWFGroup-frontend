@@ -1,31 +1,35 @@
 <div class="card my-5">
-    <div class="card-body">
-      <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">CIF</th>
-            <th scope="col">NIF</th>
-            <th scope="col">Category</th>
-            <th scope="col">Contact</th>
-            <th scope="col">Country</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let buyer of buyers">
-            <td>{{ buyer.id_buyer }}</td>
-            <td>{{ buyer.name }}</td>
-            <td>{{ buyer.CIF }}</td>
-            <td>{{ buyer.NIF }}</td>
-            <td>{{ buyer.category }}</td>
-            <td>{{ buyer.id_contact }}</td>
-            <td>{{ buyer.country }}</td>
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">CIF</th>
+          <th scope="col">NIF</th>
+          <th scope="col">Category</th>
+          <th scope="col">Contact</th>
+          <th scope="col">Country</th>
         </tr>
-        </tbody>
-      </table>
-    </div>
-    <li class="list-inline-item">
-      <a routerLink="/addBuyer" class="button">Add Buyer</a>
-    </li>
+      </thead>
+      <tbody>
+        <tr *ngFor="let buyer of buyers">
+          <td>{{ buyer.id_buyer }}</td>
+          <td>{{ buyer.name }}</td>
+          <td>{{ buyer.cif }}</td>
+          <td>{{ buyer.nif }}</td>
+          <td>{{ buyer.category }}</td>
+          <td>{{ buyer.id_contact }}</td>
+          <td>{{ buyer.country }}</td>
+          <td>
+            <button class="btn btn-outline-primary" (click)="edit(this.buyer)">Edit</button>
+            <button class="btn btn-outline-danger" (click)="delete(this.buyer)">Delete</button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+  <li class="list-inline-item">
+    <a routerLink="/addBuyer" class="button">Add Buyer</a>
+  </li>
+</div>

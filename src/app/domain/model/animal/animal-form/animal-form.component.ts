@@ -14,14 +14,14 @@ export class AnimalFormComponent {
 
   constructor(private route: ActivatedRoute, private router: Router,
     private animalService: AnimalService) {
-      this.animal = new Animal();
-     }
+    this.animal = new Animal();
+  }
 
-  onSubmit(){
+  onSubmit() {
     this.animalService.save(this.animal).subscribe(result => this.goToAnimalList());
   }
 
-  goToAnimalList(){
+  goToAnimalList() {
     this.router.navigate(['/animals']);
   }
 }

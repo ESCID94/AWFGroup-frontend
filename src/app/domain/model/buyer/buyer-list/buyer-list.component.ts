@@ -9,15 +9,26 @@ import { BuyerService } from 'src/app/domain/service/buyer-service/buyer-service
 })
 export class BuyerListComponent implements OnInit {
 
-    buyers: Buyer[];
-  
-    constructor(private buyerService: BuyerService) { }
-  
-    ngOnInit() {
-      this.buyerService.findAll().subscribe(data => {
-        this.buyers=data;
-      })
-    }
-  
+  buyers: Buyer[];
+  buyer: Buyer;
 
+  constructor(private buyerService: BuyerService) { }
+
+  ngOnInit() {
+    this.buyerService.findAll().subscribe(data => {
+      this.buyers = data;
+    })
+  }
+
+  delete(buyer: Buyer){
+    this.buyerService.delete(buyer).subscribe(data =>
+       console.log(data), error => console.log(error));
+    window.location.reload();
+  }
+
+  edit(buyer: Buyer){
+    this.buyerService.edit(buyer).subscribe(data => {
+      this.buyer = data;
+    })
+  }
 }

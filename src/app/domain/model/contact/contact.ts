@@ -6,7 +6,7 @@ export class Contact {
     email: string;
     address: string;
     country: string;
-    CIF: string;
-    NIF: string;
+    cif: string;
+    nif: string;
     category: string;
 }

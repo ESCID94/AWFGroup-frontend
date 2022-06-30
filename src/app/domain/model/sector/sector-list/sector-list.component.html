@@ -19,6 +19,10 @@
             <td>{{ sector.location }}</td>
             <td>{{ sector.id_farm }}</td>
             <td>{{ sector.id_employee }}</td>
+            <td>
+              <button class="btn btn-outline-primary" (click)="edit(this.sector)">Edit</button>
+              <button class="btn btn-outline-danger" (click)="delete(this.sector)">Delete</button>
+            </td>
         </tr>
         </tbody>
       </table>

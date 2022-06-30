@@ -9,9 +9,11 @@ import { Observable } from 'rxjs';
 export class ProviderService {
 
   private providersUrls: string;
+  private providersUrlDelete: string;
 
   constructor(private http: HttpClient) {
     this.providersUrls = 'http://localhost:8080/AWF-app/v1/providers';
+    this.providersUrlDelete = 'http://localhost:8080/AWF-app/v1/providers/deleteProviderById';
    }
 
    public findAll(): Observable<Provider[]> {
@@ -19,6 +21,14 @@ export class ProviderService {
   }
 
   public save(provider: Provider) {
+    return this.http.post<Provider>(this.providersUrls, provider);
+  }
+
+  public delete(provider: Provider): Observable<Provider> {
+    return this.http.request<Provider>('delete',this.providersUrlDelete, {body: provider});
+  }
+
+  public edit(provider: Provider) {
     return this.http.post<Provider>(this.providersUrls, provider);
   }
 }

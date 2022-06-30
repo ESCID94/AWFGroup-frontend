@@ -8,9 +8,9 @@ describe('AnimalFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AnimalFormComponent ]
+      declarations: [AnimalFormComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(AnimalFormComponent);
     component = fixture.componentInstance;

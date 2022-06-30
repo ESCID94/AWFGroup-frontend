@@ -14,14 +14,14 @@ export class ProviderFormComponent {
 
   constructor(private route: ActivatedRoute, private router: Router,
     private providerService: ProviderService) {
-      this.provider = new Provider();
-     }
+    this.provider = new Provider();
+  }
 
-  onSubmit(){
+  onSubmit() {
     this.providerService.save(this.provider).subscribe(result => this.goToProviderList());
   }
 
-  goToProviderList(){
+  goToProviderList() {
     this.router.navigate(['/providers']);
   }
 

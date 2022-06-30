@@ -24,9 +24,13 @@
             <td>{{ contact.email }}</td>
             <td>{{ contact.address }}</td>
             <td>{{ contact.country }}</td>
-            <td>{{ contact.CIF }}</td>
-            <td>{{ contact.NIF }}</td>
+            <td>{{ contact.cif }}</td>
+            <td>{{ contact.nif }}</td>
             <td>{{ contact.category }}</td>
+            <td>
+              <button class="btn btn-outline-primary" (click)="edit(this.contact)">Edit</button>
+              <button class="btn btn-outline-danger" (click)="delete(this.contact)">Delete</button>
+            </td>
         </tr>
         </tbody>
       </table>

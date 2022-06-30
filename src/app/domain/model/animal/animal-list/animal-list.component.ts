@@ -10,13 +10,37 @@ import { AnimalService } from 'src/app/domain/service/animal-service/animal-serv
 export class AnimalListComponent implements OnInit {
 
   animals: Animal[];
+  animal: Animal;
+  isShown: boolean = false ;
 
-  constructor(private animalService: AnimalService) { }
+  constructor(public animalService: AnimalService) { }
 
+  
   ngOnInit() {
     this.animalService.findAll().subscribe(data => {
-      this.animals=data;
+      this.animals = data;
     })
   }
 
+  delete(animal: Animal){
+    this.animalService.delete(animal).subscribe(data =>
+       console.log(data), error => console.log(error));
+    window.location.reload();
+  }
+
+  save(animal: Animal){
+    this.animalService.save(animal).subscribe(data =>
+      console.log(data), error => console.log(error));
+
+    window.location.reload();
+  }
+
+  toggleShow() {
+
+  this.isShown = ! this.isShown;
+
+  }
 }
+
+
+

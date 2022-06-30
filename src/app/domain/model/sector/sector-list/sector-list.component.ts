@@ -10,6 +10,7 @@ import { Sector } from '../sector';
 export class SectorListComponent implements OnInit {
 
   sectors: Sector[];
+  sector: Sector;
   constructor(private sectorService: SectorService) { }
 
   ngOnInit() {
@@ -18,4 +19,15 @@ export class SectorListComponent implements OnInit {
     })
   }
 
+  delete(sector: Sector){
+    this.sectorService.delete(sector).subscribe(data =>
+       console.log(data), error => console.log(error));
+    window.location.reload();
+  }
+
+  edit(sector: Sector){
+    this.sectorService.edit(sector).subscribe(data => {
+      this.sector = data;
+    })
+  }
 }

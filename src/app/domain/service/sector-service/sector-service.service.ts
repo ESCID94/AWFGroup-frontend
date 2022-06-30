@@ -9,9 +9,11 @@ import { Observable } from 'rxjs';
 export class SectorService {
 
   private sectorsUrls: string;
+  private sectorsUrlDelete: string;
 
   constructor(private http: HttpClient) {
     this.sectorsUrls = 'http://localhost:8080/AWF-app/v1/sectors';
+    this.sectorsUrlDelete = 'http://localhost:8080/AWF-app/v1/sectors/deleteSectorById';
    }
 
    public findAll(): Observable<Sector[]> {
@@ -19,6 +21,14 @@ export class SectorService {
   }
 
   public save(sector: Sector) {
+    return this.http.post<Sector>(this.sectorsUrls, sector);
+  }
+
+  public delete(sector: Sector): Observable<Sector> {
+    return this.http.request<Sector>('delete',this.sectorsUrlDelete, {body: sector});
+  }
+
+  public edit(sector: Sector) {
     return this.http.post<Sector>(this.sectorsUrls, sector);
   }
 }

@@ -10,12 +10,25 @@ import { ContactService } from 'src/app/domain/service/contact-service/contact-s
 export class ContactListComponent implements OnInit {
 
   contacts: Contact[];
+  contact: Contact;
 
   constructor(private contactService: ContactService) { }
 
   ngOnInit() {
     this.contactService.findAll().subscribe(data => {
       this.contacts=data;
+    })
+  }
+
+  delete(contact: Contact){
+    this.contactService.delete(contact).subscribe(data =>
+       console.log(data), error => console.log(error));
+    window.location.reload();
+  }
+
+  edit(contact: Contact){
+    this.contactService.edit(contact).subscribe(data => {
+      this.contact = data;
     })
   }
 

@@ -1,80 +1,62 @@
 <div class="card my-5">
-    <div class="card-body">
-      <form (ngSubmit)="onSubmit()" #contactform="ngForm">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" [(ngModel)]="contact.name"
-            id="name" 
-            name="name" 
-            class="form-control" 
-            placeholder="Enter the contact name">
-        </div>
-        <div class="form-group">
-          <label for="last_name">Last name</label>
-          <input type="text" [(ngModel)]="contact.last_name"
-            id="last_name" 
-            name="last_name"
-            class="form-control" 
-            placeholder="Enter the contact last name">
-        </div>
-        <div class="form-group">
-          <label for="telephone">Telephone</label>
-          <input type="text" [(ngModel)]="contact.telephone"
-            id="telephone" 
-            name="telephone"           
-            class="form-control" 
-            placeholder="Enter the contact telephone">
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="text" [(ngModel)]="contact.email"
-            id="email" 
-            name="email"           
-            class="form-control" 
-            placeholder="Enter the contact email">
-        </div>
-        <div class="form-group">
-          <label for="address">Address</label>
-          <input type="text" [(ngModel)]="contact.address"
-            id="address" 
-            name="address"           
-            class="form-control" 
-            placeholder="Enter the contact address">
-        </div>
-        <div class="form-group">
-          <label for="country">Country</label>
-          <input type="text" [(ngModel)]="contact.country"
-            id="country" 
-            name="country"           
-            class="form-control" 
-            placeholder="Enter the contact country">
-        </div>
-        <div class="form-group">
-          <label for="CIF">CIF</label>
-          <input type="text" [(ngModel)]="contact.CIF"
-            id="CIF" 
-            name="CIF" 
-            class="form-control" 
-            placeholder="Enter the contact CIF">
-        </div>
-        <div class="form-group">
-          <label for="NIF">NIF</label>
-          <input type="text" [(ngModel)]="contact.NIF" 
-            id="NIF" 
-            name="NIF"          
-            class="form-control" 
-            placeholder="Enter the contact NIF">
-        </div>
-        <div class="form-group">
-          <label for="category">Category</label>
-          <input type="text" [(ngModel)]="contact.category"
-            id="category" 
-            name="category" 
-            class="form-control" 
-            placeholder="Enter the contact category">
-        </div>
-        <button type="submit" [disabled]="!contactform.form.valid" 
-          class="button">Submit</button>
-      </form>
-    </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #contactform="ngForm">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Telephone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Country</th>
+            <th scope="col">CIF</th>
+            <th scope="col">NIF</th>
+            <th scope="col">Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="contact.name" id="name" name="name" class="form-control"
+                placeholder="Name">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="contact.last_name" id="last_name" name="last_name" class="form-control"
+                placeholder="Last name">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="contact.telephone" id="telephone" name="telephone" class="form-control"
+                placeholder="Telephone">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="contact.email" id="email" name="email" class="form-control"
+                placeholder="Email">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="contact.address" id="address" name="address" class="form-control"
+                placeholder="Enter the contact address">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="contact.country" id="country" name="country" class="form-control"
+                placeholder="Country">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="contact.cif" id="CIF" name="CIF" class="form-control"
+                placeholder="CIF">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="contact.nif" id="NIF" name="NIF" class="form-control"
+                placeholder="NIF">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="contact.category" id="category" name="category" class="form-control"
+                placeholder="Category">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit" [disabled]="!contactform.form.valid" class="button">Submit</button>
+    </form>
   </div>
+</div>

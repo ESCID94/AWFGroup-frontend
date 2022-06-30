@@ -10,11 +10,24 @@ import { Product } from '../product';
 export class ProductListComponent implements OnInit {
 
   products: Product[];
+  product: Product;
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.productService.findAll().subscribe(data => {
       this.products = data;
+    })
+  }
+
+  delete(product: Product){
+    this.productService.delete(product).subscribe(data =>
+       console.log(data), error => console.log(error));
+    window.location.reload();
+  }
+
+  edit(product: Product){
+    this.productService.edit(product).subscribe(data => {
+      this.product = data;
     })
   }
 
