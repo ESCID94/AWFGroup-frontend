@@ -11,6 +11,7 @@ export class FarmListComponent implements OnInit {
 
   farms: Farm[];
   farm: Farm;
+  isShown: boolean = false ;
   
   constructor(private farmService: FarmService) { }
 
@@ -26,10 +27,17 @@ export class FarmListComponent implements OnInit {
     window.location.reload();
   }
 
-  edit(farm: Farm){
-    this.farmService.edit(farm).subscribe(data => {
-      this.farm = data;
-    })
+  save(farm: Farm){
+    this.farmService.save(farm).subscribe(data =>
+      console.log(data), error => console.log(error));
+
+    window.location.reload();
   }
+
+  toggleShow() {
+
+    this.isShown = ! this.isShown;
+  
+    }
 
 }

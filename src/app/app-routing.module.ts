@@ -19,6 +19,7 @@ import { SaleListComponent } from './domain/model/sale/sale-list/sale-list.compo
 import { SaleFormComponent } from './domain/model/sale/sale-form/sale-form.component';
 import { SectorListComponent } from './domain/model/sector/sector-list/sector-list.component';
 import { SectorFormComponent } from './domain/model/sector/sector-form/sector-form.component';
+import { LoginComponent } from './domain/login/login.component';
 
 const routes: Routes = [
   { path: 'animals', component: AnimalListComponent },
@@ -39,7 +40,8 @@ const routes: Routes = [
   { path: 'addSale', component: SaleFormComponent },
   { path: 'sectors', component: SectorListComponent },
   { path: 'addSector', component: SectorFormComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({

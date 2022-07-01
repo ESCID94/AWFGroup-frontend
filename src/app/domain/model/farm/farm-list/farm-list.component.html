@@ -1,9 +1,9 @@
 <div class="card my-5">
   <div class="card-body">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered" style="table-layout: fixed;">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">ID</th>
+          <th *ngIf="!isShown" scope="col">ID</th>
           <th scope="col">Name</th>
           <th scope="col">Location</th>
           <th scope="col">Size</th>
@@ -12,13 +12,14 @@
       </thead>
       <tbody>
         <tr *ngFor="let farm of farms">
-          <td>{{ farm.id_farm }}</td>
-          <td>{{ farm.name }}</td>
-          <td>{{ farm.location }}</td>
-          <td>{{ farm.farm_size }}</td>
-          <td>{{ farm.total_sectors }}</td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="farm.id_farm" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="farm.name" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="farm.location" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="farm.farm_size" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="farm.total_sectors" /></td>
           <td>
-            <button class="btn btn-outline-primary" (click)="edit(this.farm)">Edit</button>
+            <button class="btn btn-outline-primary" (click)="toggleShow()">Edit</button>
+            <button *ngIf="isShown" class="btn btn-outline-success" (click)="save(this.farm)">Save</button>
             <button class="btn btn-outline-danger" (click)="delete(this.farm)">Delete</button>
           </td>
         </tr>

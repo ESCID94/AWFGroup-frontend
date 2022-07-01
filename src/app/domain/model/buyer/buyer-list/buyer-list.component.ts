@@ -11,6 +11,7 @@ export class BuyerListComponent implements OnInit {
 
   buyers: Buyer[];
   buyer: Buyer;
+  isShown: boolean = false;
 
   constructor(private buyerService: BuyerService) { }
 
@@ -20,15 +21,22 @@ export class BuyerListComponent implements OnInit {
     })
   }
 
-  delete(buyer: Buyer){
+  delete(buyer: Buyer) {
     this.buyerService.delete(buyer).subscribe(data =>
-       console.log(data), error => console.log(error));
+      console.log(data), error => console.log(error));
     window.location.reload();
   }
 
-  edit(buyer: Buyer){
-    this.buyerService.edit(buyer).subscribe(data => {
-      this.buyer = data;
-    })
+  save(buyer: Buyer) {
+    this.buyerService.save(buyer).subscribe(data =>
+      console.log(data), error => console.log(error));
+
+    window.location.reload();
+  }
+
+  toggleShow() {
+
+    this.isShown = !this.isShown;
+
   }
 }

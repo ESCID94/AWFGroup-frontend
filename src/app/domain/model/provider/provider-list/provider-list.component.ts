@@ -11,6 +11,8 @@ export class ProviderListComponent implements OnInit {
 
   providers: Provider[];
   provider: Provider;
+  isShown: boolean = false ;
+
   constructor(private providerService: ProviderService) { }
 
   ngOnInit() {
@@ -25,10 +27,17 @@ export class ProviderListComponent implements OnInit {
     window.location.reload();
   }
 
-  edit(provider: Provider){
-    this.providerService.edit(provider).subscribe(data => {
-      this.provider = data;
-    })
+  save(provider: Provider){
+    this.providerService.save(provider).subscribe(data =>
+      console.log(data), error => console.log(error));
+
+    window.location.reload();
   }
+
+  toggleShow() {
+
+    this.isShown = ! this.isShown;
+  
+    }
 
 }

@@ -12,6 +12,8 @@ export class EmployeeListComponent implements OnInit {
 
   employees: Employee[];
   employee: Employee;
+  isShown: boolean = false;
+
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
@@ -20,16 +22,23 @@ export class EmployeeListComponent implements OnInit {
     })
   }
 
-  delete(employee: Employee){
+  delete(employee: Employee) {
     this.employeeService.delete(employee).subscribe(data =>
-       console.log(data), error => console.log(error));
+      console.log(data), error => console.log(error));
     window.location.reload();
   }
 
-  edit(employee: Employee){
-    this.employeeService.edit(employee).subscribe(data => {
-      this.employee = data;
-    })
+  save(employee: Employee) {
+    this.employeeService.save(employee).subscribe(data =>
+      console.log(data), error => console.log(error));
+
+    window.location.reload();
+  }
+
+  toggleShow() {
+
+    this.isShown = !this.isShown;
+
   }
 
 }

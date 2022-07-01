@@ -15,7 +15,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let animal of animals">
-          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="animal.id_animal"/></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="animal.id_animal" /></td>
           <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="animal.type" /></td>
           <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="animal.breed" /></td>
           <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="animal.sex" /></td>

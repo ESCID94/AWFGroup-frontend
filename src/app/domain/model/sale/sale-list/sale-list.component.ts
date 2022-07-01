@@ -11,6 +11,8 @@ export class SaleListComponent implements OnInit {
 
   sales: Sale[];
   sale: Sale;
+  isShown: boolean = false ;
+
   constructor(private saleService: SaleService) { }
 
   ngOnInit() {
@@ -25,10 +27,17 @@ export class SaleListComponent implements OnInit {
     window.location.reload();
   }
 
-  edit(sale: Sale){
-    this.saleService.edit(sale).subscribe(data => {
-      this.sale = data;
-    })
+  save(sale: Sale){
+    this.saleService.save(sale).subscribe(data =>
+      console.log(data), error => console.log(error));
+
+    window.location.reload();
   }
+
+  toggleShow() {
+
+    this.isShown = ! this.isShown;
+  
+    }
 
 }

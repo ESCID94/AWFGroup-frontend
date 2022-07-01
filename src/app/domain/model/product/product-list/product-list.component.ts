@@ -11,6 +11,8 @@ export class ProductListComponent implements OnInit {
 
   products: Product[];
   product: Product;
+  isShown: boolean = false ;
+
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
@@ -25,10 +27,17 @@ export class ProductListComponent implements OnInit {
     window.location.reload();
   }
 
-  edit(product: Product){
-    this.productService.edit(product).subscribe(data => {
-      this.product = data;
-    })
+  save(product: Product){
+    this.productService.save(product).subscribe(data =>
+      console.log(data), error => console.log(error));
+
+    window.location.reload();
   }
+
+  toggleShow() {
+
+    this.isShown = ! this.isShown;
+  
+    }
 
 }

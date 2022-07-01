@@ -11,25 +11,33 @@ export class ContactListComponent implements OnInit {
 
   contacts: Contact[];
   contact: Contact;
+  isShown: boolean = false;
 
   constructor(private contactService: ContactService) { }
 
   ngOnInit() {
     this.contactService.findAll().subscribe(data => {
-      this.contacts=data;
+      this.contacts = data;
     })
   }
 
-  delete(contact: Contact){
+  delete(contact: Contact) {
     this.contactService.delete(contact).subscribe(data =>
-       console.log(data), error => console.log(error));
+      console.log(data), error => console.log(error));
     window.location.reload();
   }
 
-  edit(contact: Contact){
-    this.contactService.edit(contact).subscribe(data => {
-      this.contact = data;
-    })
+  save(contact: Contact) {
+    this.contactService.save(contact).subscribe(data =>
+      console.log(data), error => console.log(error));
+
+    window.location.reload();
+  }
+
+  toggleShow() {
+
+    this.isShown = !this.isShown;
+
   }
 
 }

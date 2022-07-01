@@ -1,7 +1,7 @@
 <div class="card my-5">
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #animalform="ngForm">
-      <table class="table table-bordered table-striped">
+      <table class="table table-bordered" style="table-layout: fixed;">
         <thead class="thead-dark">
           <tr>
             <th scope="col">Type</th>
@@ -24,16 +24,14 @@
                 placeholder="Breed">
             </td>
             <td class="form-group">
-              <input type="text" [(ngModel)]="animal.sex" id="sex" name="sex" class="form-control"
-                placeholder="Sex">
+              <input type="text" [(ngModel)]="animal.sex" id="sex" name="sex" class="form-control" placeholder="Sex">
             </td>
             <td class="form-group">
               <input type="text" [(ngModel)]="animal.weight" id="weight" name="weight" class="form-control"
                 placeholder="Weight">
             </td>
             <td class="form-group">
-              <input type="text" [(ngModel)]="animal.lot" id="lot" name="lot" class="form-control"
-                placeholder="Lot">
+              <input type="text" [(ngModel)]="animal.lot" id="lot" name="lot" class="form-control" placeholder="Lot">
             </td>
             <td class="form-group">
               <input type="text" [(ngModel)]="animal.id_sector" id="id_sector" name="id_sector" class="form-control"

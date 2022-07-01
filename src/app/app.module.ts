@@ -30,7 +30,7 @@ import { SectorFormComponent } from './domain/model/sector/sector-form/sector-fo
 import { SectorListComponent } from './domain/model/sector/sector-list/sector-list.component';
 import {APP_BASE_HREF} from '@angular/common';
 import { AboutComponent } from './domain/about/about.component';
-
+import { LoginComponent } from './domain/login/login.component';
 /*
 Services
 */
@@ -43,6 +43,8 @@ import { ProductService } from './domain/service/product-service/product-service
 import { ProviderService } from './domain/service/provider-service/provider-service.service';
 import { SaleService } from './domain/service/sale-service/sale-service.service';
 import { SectorService } from './domain/service/sector-service/sector-service.service';
+import { LoginService } from './domain/service/login.service';
+
 
 @NgModule({
   declarations: [
@@ -65,7 +67,8 @@ import { SectorService } from './domain/service/sector-service/sector-service.se
     SaleFormComponent,
     SectorFormComponent,
     SectorListComponent,
-    AboutComponent
+    AboutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +85,8 @@ import { SectorService } from './domain/service/sector-service/sector-service.se
               ProductService,
               ProviderService,
               SaleService,
-              SectorService
+              SectorService,
+              LoginService
   ],
   bootstrap: [AppComponent]
 })

@@ -11,6 +11,8 @@ export class SectorListComponent implements OnInit {
 
   sectors: Sector[];
   sector: Sector;
+  isShown: boolean = false ;
+
   constructor(private sectorService: SectorService) { }
 
   ngOnInit() {
@@ -25,9 +27,16 @@ export class SectorListComponent implements OnInit {
     window.location.reload();
   }
 
-  edit(sector: Sector){
-    this.sectorService.edit(sector).subscribe(data => {
-      this.sector = data;
-    })
+  save(sector: Sector){
+    this.sectorService.save(sector).subscribe(data =>
+      console.log(data), error => console.log(error));
+
+    window.location.reload();
   }
+
+  toggleShow() {
+
+    this.isShown = ! this.isShown;
+  
+    }
 }

@@ -11,24 +11,24 @@ export class AnimalListComponent implements OnInit {
 
   animals: Animal[];
   animal: Animal;
-  isShown: boolean = false ;
+  isShown: boolean = false;
 
   constructor(public animalService: AnimalService) { }
 
-  
+
   ngOnInit() {
     this.animalService.findAll().subscribe(data => {
       this.animals = data;
     })
   }
 
-  delete(animal: Animal){
+  delete(animal: Animal) {
     this.animalService.delete(animal).subscribe(data =>
-       console.log(data), error => console.log(error));
+      console.log(data), error => console.log(error));
     window.location.reload();
   }
 
-  save(animal: Animal){
+  save(animal: Animal) {
     this.animalService.save(animal).subscribe(data =>
       console.log(data), error => console.log(error));
 
@@ -37,7 +37,7 @@ export class AnimalListComponent implements OnInit {
 
   toggleShow() {
 
-  this.isShown = ! this.isShown;
+    this.isShown = !this.isShown;
 
   }
 }

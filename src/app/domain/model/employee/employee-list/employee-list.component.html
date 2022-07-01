@@ -1,9 +1,9 @@
 <div class="card my-5">
   <div class="card-body">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered" style="table-layout: fixed;">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">ID</th>
+          <th *ngIf="!isShown" scope="col">ID</th>
           <th scope="col">Name</th>
           <th scope="col">Last Name</th>
           <th scope="col">Salary</th>
@@ -12,13 +12,14 @@
       </thead>
       <tbody>
         <tr *ngFor="let employee of employees">
-          <td>{{ employee.id_employee }}</td>
-          <td>{{ employee.name }}</td>
-          <td>{{ employee.last_name }}</td>
-          <td>{{ employee.salary }}</td>
-          <td>{{ employee.category }}</td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="employee.id_employee" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="employee.name" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="employee.last_name" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="employee.salary" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="employee.category" /></td>
           <td>
-            <button class="btn btn-outline-primary" (click)="edit(this.employee)">Edit</button>
+            <button class="btn btn-outline-primary" (click)="toggleShow()">Edit</button>
+            <button *ngIf="isShown" class="btn btn-outline-success" (click)="save(this.employee)">Save</button>
             <button class="btn btn-outline-danger" (click)="delete(this.employee)">Delete</button>
           </td>
         </tr>

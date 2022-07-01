@@ -1,9 +1,9 @@
 <div class="card my-5">
   <div class="card-body">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered" style="table-layout: fixed;">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">ID</th>
+          <th *ngIf="!isShown" scope="col">ID</th>
           <th scope="col">Name</th>
           <th scope="col">CIF</th>
           <th scope="col">NIF</th>
@@ -14,17 +14,17 @@
       </thead>
       <tbody>
         <tr *ngFor="let buyer of buyers">
-          <td>{{ buyer.id_buyer }}</td>
-          <td>{{ buyer.name }}</td>
-          <td>{{ buyer.cif }}</td>
-          <td>{{ buyer.nif }}</td>
-          <td>{{ buyer.category }}</td>
-          <td>{{ buyer.id_contact }}</td>
-          <td>{{ buyer.country }}</td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="buyer.name" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="buyer.cif" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="buyer.nif" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="buyer.category" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="buyer.id_contact" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="buyer.country" /></td>
           <td>
-            <button class="btn btn-outline-primary" (click)="edit(this.buyer)">Edit</button>
+            <button class="btn btn-outline-primary" (click)="toggleShow()">Edit</button>
+            <button *ngIf="isShown" class="btn btn-outline-success" (click)="save(this.buyer)">Save</button>
             <button class="btn btn-outline-danger" (click)="delete(this.buyer)">Delete</button>
-        </td>
+          </td>
         </tr>
       </tbody>
     </table>
