@@ -1,0 +1,34 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered" style="table-layout: fixed;">
+      <thead class="thead-dark">
+        <tr>
+          <th *ngIf="!isShown" scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Type Animals</th>
+          <th scope="col">Location</th>
+          <th scope="col">Farm</th>
+          <th scope="col">Employee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sector of sectors">
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="sector.id_sector" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="sector.name" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="sector.type_animals" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="sector.location" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="sector.id_farm" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="sector.id_employee" /></td>
+          <td>
+            <button class="btn btn-outline-primary" (click)="toggleShow()">Edit</button>
+            <button *ngIf="isShown" class="btn btn-outline-success" (click)="save(this.sector)">Save</button>
+            <button class="btn btn-outline-danger" (click)="delete(this.sector)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <li class="list-inline-item">
+    <a routerLink="/addSector" class="button">Add Sector</a>
+  </li>
+</div>

@@ -1,0 +1,41 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered" style="table-layout: fixed;">
+      <thead class="thead-dark">
+        <tr>
+          <th *ngIf="!isShown" scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Telephone</th>
+          <th scope="col">Email</th>
+          <th scope="col">Address</th>
+          <th scope="col">Country</th>
+          <th scope="col">CIF</th>
+          <th scope="col">NIF</th>
+          <th scope="col">Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contact of contacts">
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="contact.id_contact" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="contact.name" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="contact.last_name" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="contact.email" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="contact.address" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="contact.country" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="contact.cif" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="contact.nif" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="contact.category" /></td>
+          <td>
+            <button class="btn btn-outline-primary" (click)="toggleShow()">Edit</button>
+            <button *ngIf="isShown" class="btn btn-outline-success" (click)="save(this.contact)">Save</button>
+            <button class="btn btn-outline-danger" (click)="delete(this.contact)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <li class="list-inline-item">
+    <a routerLink="/addContact" class="button">Add Contact</a>
+  </li>
+</div>

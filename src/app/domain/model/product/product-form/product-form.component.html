@@ -1,0 +1,32 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #productform="ngForm">
+      <table class="table table-bordered" style="table-layout: fixed;">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Category</th>
+            <th scope="col">Type</th>
+            <th scope="col">Provider</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input type="text" [(ngModel)]="product.category" id="category" name="category" class="form-control"
+                placeholder="Category">
+            </td>
+            <td>
+              <input type="text" [(ngModel)]="product.type" id="type" name="type" class="form-control"
+                placeholder="Type">
+            </td>
+            <td>
+              <input type="text" [(ngModel)]="product.id_provider" id="id_provider" name="id_provider"
+                class="form-control" placeholder="ID provider">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit" [disabled]="!productform.form.valid" class="button">Submit</button>
+    </form>
+  </div>
+</div>

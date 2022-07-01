@@ -1,0 +1,36 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered" style="table-layout: fixed;">
+      <thead class="thead-dark">
+        <tr>
+          <th *ngIf="!isShown" scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">CIF</th>
+          <th scope="col">NIF</th>
+          <th scope="col">Category</th>
+          <th scope="col">Contact</th>
+          <th scope="col">Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let provider of providers">
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="provider.id_provider" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="provider.name" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="provider.cif" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="provider.nif" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="provider.category" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="provider.id_contact" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="provider.country" /></td>
+          <td>
+            <button class="btn btn-outline-primary" (click)="toggleShow()">Edit</button>
+            <button *ngIf="isShown" class="btn btn-outline-success" (click)="save(this.provider)">Save</button>
+            <button class="btn btn-outline-danger" (click)="delete(this.provider)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <li class="list-inline-item">
+    <a routerLink="/addProvider" class="button">Add Provider</a>
+  </li>
+</div>

@@ -1,0 +1,38 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered" style="table-layout: fixed;">
+      <thead class="thead-dark">
+        <tr>
+          <th *ngIf="!isShown" scope="col">ID</th>
+          <th scope="col">Type</th>
+          <th scope="col">Breed</th>
+          <th scope="col">Sex</th>
+          <th scope="col">Weight</th>
+          <th scope="col">Lot</th>
+          <th scope="col">Sector</th>
+          <th scope="col">Farm</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let animal of animals">
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="animal.id_animal" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="animal.type" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="animal.breed" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="animal.sex" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="animal.weight" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="animal.lot" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="animal.id_sector" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="animal.id_farm" /></td>
+          <td>
+            <button class="btn btn-outline-primary" (click)="toggleShow()">Edit</button>
+            <button *ngIf="isShown" class="btn btn-outline-success" (click)="save(this.animal)">Save</button>
+            <button class="btn btn-outline-danger" (click)="delete(this.animal)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <li class="list-inline-item">
+    <a routerLink="/addAnimal" class="button">Add Animal</a>
+  </li>
+</div>

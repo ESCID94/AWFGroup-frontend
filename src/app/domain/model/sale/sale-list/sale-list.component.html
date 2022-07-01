@@ -1,0 +1,32 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered" style="table-layout: fixed;">
+      <thead class="thead-dark">
+        <tr>
+          <th *ngIf="!isShown" scope="col">ID</th>
+          <th scope="col">Animal</th>
+          <th scope="col">Buyer</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sale of sales">
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="sale.id_sale" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="sale.id_animal" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="sale.id_buyer" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="sale.quantity" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="sale.price" /></td>
+          <td>
+            <button class="btn btn-outline-primary" (click)="toggleShow()">Edit</button>
+            <button *ngIf="isShown" class="btn btn-outline-success" (click)="save(this.sale)">Save</button>
+            <button class="btn btn-outline-danger" (click)="delete(this.sale)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <li class="list-inline-item">
+    <a routerLink="/addSale" class="button">Add Sale</a>
+  </li>
+</div>

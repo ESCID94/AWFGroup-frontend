@@ -1,0 +1,37 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #saleform="ngForm">
+      <table class="table table-bordered" style="table-layout: fixed;">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Animal</th>
+            <th scope="col">Buyer</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="sale.id_animal" id="id_animal" name="id_animal" class="form-control"
+                placeholder="ID animal">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="sale.id_buyer" id="id_buyer" name="id_buyer" class="form-control"
+                placeholder="ID buyer">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="sale.quantity" id="quantity" name="quantity" class="form-control"
+                placeholder="Price per kilogram">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="sale.price" id="price" name="price" class="form-control"
+                placeholder="Total price">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit" [disabled]="!saleform.form.valid" class="button">Submit</button>
+    </form>
+  </div>
+</div>

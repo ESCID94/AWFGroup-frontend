@@ -1,0 +1,44 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #buyerform="ngForm">
+      <table class="table table-bordered" style="table-layout: fixed;">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">CIF</th>
+            <th scope="col">NIF</th>
+            <th scope="col">Category</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Country</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="buyer.name" id="name" name="name" class="form-control" placeholder="Name">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="buyer.cif" id="CIF" name="CIF" class="form-control" placeholder="CIF">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="buyer.nif" id="NIF" name="NIF" class="form-control" placeholder="NIF">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="buyer.category" id="category" name="category" class="form-control"
+                placeholder="Category">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="buyer.id_contact" id="id_contact" name="id_contact" class="form-control"
+                placeholder="ID Contact">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="buyer.country" id="country" name="country" class="form-control"
+                placeholder="Country">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit" [disabled]="!buyerform.form.valid" class="button">Submit</button>
+    </form>
+  </div>
+</div>

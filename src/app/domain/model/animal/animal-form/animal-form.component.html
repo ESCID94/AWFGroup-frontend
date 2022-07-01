@@ -1,0 +1,50 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #animalform="ngForm">
+      <table class="table table-bordered" style="table-layout: fixed;">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Type</th>
+            <th scope="col">Breed</th>
+            <th scope="col">Sex</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Lot</th>
+            <th scope="col">Sector</th>
+            <th scope="col">Farm</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input type="text" [(ngModel)]="animal.type" id="type" name="type" class="form-control"
+                placeholder="Type">
+            </td>
+            <td>
+              <input type="text" [(ngModel)]="animal.breed" id="breed" name="breed" class="form-control"
+                placeholder="Breed">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="animal.sex" id="sex" name="sex" class="form-control" placeholder="Sex">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="animal.weight" id="weight" name="weight" class="form-control"
+                placeholder="Weight">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="animal.lot" id="lot" name="lot" class="form-control" placeholder="Lot">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="animal.id_sector" id="id_sector" name="id_sector" class="form-control"
+                placeholder="ID Sector">
+            </td>
+            <td class="form-group">
+              <input type="text" [(ngModel)]="animal.id_farm" id="id_farm" name="id_farm" class="form-control"
+                placeholder="ID Farm">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit" [disabled]="!animalform.form.valid" class="button">Submit</button>
+    </form>
+  </div>
+</div>

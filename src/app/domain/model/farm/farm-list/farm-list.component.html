@@ -1,0 +1,32 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered" style="table-layout: fixed;">
+      <thead class="thead-dark">
+        <tr>
+          <th *ngIf="!isShown" scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Location</th>
+          <th scope="col">Size</th>
+          <th scope="col">Total sectors</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let farm of farms">
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="farm.id_farm" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="farm.name" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="farm.location" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="farm.farm_size" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="farm.total_sectors" /></td>
+          <td>
+            <button class="btn btn-outline-primary" (click)="toggleShow()">Edit</button>
+            <button *ngIf="isShown" class="btn btn-outline-success" (click)="save(this.farm)">Save</button>
+            <button class="btn btn-outline-danger" (click)="delete(this.farm)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <li class="list-inline-item">
+    <a routerLink="/addFarm" class="button">Add Farm</a>
+  </li>
+</div>

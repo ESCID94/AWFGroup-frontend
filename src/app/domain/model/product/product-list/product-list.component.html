@@ -1,0 +1,30 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered" style="table-layout: fixed;">
+      <thead class="thead-dark">
+        <tr>
+          <th *ngIf="!isShown" scope="col">ID</th>
+          <th scope="col">Category</th>
+          <th scope="col">Type</th>
+          <th scope="col">Provider</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="product.id_product" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="product.category" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="product.type" /></td>
+          <td><input [readonly]="!isShown" class="form-control" [(ngModel)]="product.id_provider" /></td>
+          <td>
+            <button class="btn btn-outline-primary" (click)="toggleShow()">Edit</button>
+            <button *ngIf="isShown" class="btn btn-outline-success" (click)="save(this.product)">Save</button>
+            <button class="btn btn-outline-danger" (click)="delete(this.product)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <li class="list-inline-item">
+    <a routerLink="/addProduct" class="button">Add Product</a>
+  </li>
+</div>
