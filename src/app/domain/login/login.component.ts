@@ -56,6 +56,9 @@ export class LoginComponent {
     this.userService.save(user).subscribe(data =>
       console.log(data), error => console.log(error));
 
+      alert("User registered!");
+      this.isShown = true;
+
     this.goToAnimals;
   }
 
